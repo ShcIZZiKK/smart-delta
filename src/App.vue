@@ -1,26 +1,57 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app-wrapper">
+    <LineWrapper v-for="item in list" :key="item.id" :data="item" />
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import { ItemInterface } from "@/Interfaces/Interfaces";
+import LineWrapper from "@/components/LineWrapper/LineWrapper.vue";
 
-export default {
-  name: 'App',
+export default defineComponent({
+  name: "App",
+
   components: {
-    HelloWorld
-  }
-}
+    LineWrapper,
+  },
+
+  setup() {
+    const callback = (event: Event): void => {
+      console.log(event.target as EventTarget);
+    };
+
+    const list = ref([
+      {
+        id: 1,
+        icon: "note",
+        message: "Title Big mob",
+        callback,
+      },
+      {
+        id: 2,
+        message: "Title Big mob Title Big mob Title Big mob Title Big mob",
+        modify: "line-wrapper_theme_warning",
+      },
+      {
+        id: 3,
+        message: "Title Big mob Title Big mob Title Big mob Title Big mob",
+        modify: "line-wrapper_theme_second",
+        callback,
+      },
+      {
+        id: 4,
+        icon: "clock",
+        message: "Title Big mob Title Big",
+        modify: "line-wrapper_theme_warning",
+      },
+    ] as ItemInterface[]);
+
+    return { list };
+  },
+});
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "assets/styles/app.css";
 </style>

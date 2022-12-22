@@ -1,0 +1,9 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-primary: #E81F2F;
+    --color-second: #02029B;
+    --color-warning: #d5ae0a;
+    --color-primary-gradient: 90deg, #E81F2F 0%, #FF8983 100%;
+    --color-second-gradient: 90deg, #1F84E8 0%, #79C0F5 100%;
+    --color-warning-gradient: 90deg, #fcd827 0%, #f3ef6e 100%;
+}
