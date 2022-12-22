@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { ItemInterface } from "@/Interfaces/Interfaces";
+import { ItemInterface } from "@/interfaces/interfaces";
 import BaseButton from "@/components/BaseButton/BaseButton.vue";
 import SvgIcon from "@/components/SvgIcon/SvgIcon.vue";
 

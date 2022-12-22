@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import { ItemInterface } from "@/Interfaces/Interfaces";
+import { ItemInterface } from "@/interfaces/interfaces";
 import LineWrapper from "@/components/LineWrapper/LineWrapper.vue";
 
 export default defineComponent({
